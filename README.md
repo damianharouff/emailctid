@@ -1,5 +1,5 @@
-emailctid.php - Send notifications when a load average threshold is reached, and include openvz CTIDs
-released under WTFPL - http://www.wtfpl.net/about/
+emailctid.php - Send notifications when a load average threshold is reached, and include openvz CTIDs  
+released under WTFPL - http://www.wtfpl.net/about/  
 Emails notifications that look like http://disclosed.info/6
 
 Place emailctid.php anywhere on your server.
