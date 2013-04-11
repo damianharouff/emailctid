@@ -16,6 +16,8 @@ $maxLA = 10;			//send notifications when 1 minute load average is over this valu
 $mailto = 'your@address.here'; 	//put your email address here. Multiple users can be specified comma-delimited 
 				//such as bob@website.com,gerald@things.net,bill@place.org
 
+$pathtovzpid = '/usr/sbin/vzpid';
+
 //=========================================================
 
 $load = sys_getloadavg();
@@ -35,7 +37,7 @@ if ($load[0] > $maxLA) {
 	}
 
 	$ctids = implode(" ", $pids);
-	$vzpid = shell_exec("vzpid " . $ctids);
+	$vzpid = shell_exec($pathtovzpid . " " . $ctids);
 	$topDisplay = strtr($poundOutput, "#", chr(9));
 
 	$msg .= "Load averages: " . $load[0] . " " . $load[1] . " " . $load[2] . PHP_EOL;
